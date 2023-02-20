@@ -8,6 +8,7 @@ const morgan = require("morgan");
 
 //Rutas de programas internos
 const usuarioRuta = require("./routes/usuarios");
+const authRuta = require("./routes/auth");
 
 // Rutas para configurar programas externos
 dotenv.config();
@@ -24,9 +25,10 @@ mongoose.connect(
 // Middlewares
 app.use(express.json());
 app.use(helmet());
-app.use(morgan("Comun"));
+app.use(morgan("common"));
 
 app.use("/api/usuarios", usuarioRuta);
+app.use("/api/auth", authRuta);
 
 // Aplicacion a la escucha
 app.listen(8800, () => {

@@ -5,7 +5,3 @@ router.get("/", (req, res) => {
 });
 
 module.exports = router;
-
-// app.get("/usuarios", (req, res) => {
-//   res.send("Hola usuario");
-// });
