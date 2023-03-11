@@ -28,13 +28,33 @@ const UsuarioSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
-    seguidores: {
+    followers: {
+      type: Array,
+      default: [],
+    },
+    followings: {
       type: Array,
       default: [],
     },
     esAdmin: {
       type: Boolean,
       default: false,
+    },
+    desc: {
+      type: String,
+      max: 50,
+    },
+    ciudad: {
+      type: String,
+      max: 50,
+    },
+    de: {
+      type: String,
+      max: 50,
+    },
+    relacion: {
+      type: Number,
+      enum: [1, 2, 3],
     },
   },
   { timestamps: true }

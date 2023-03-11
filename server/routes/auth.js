@@ -20,7 +20,7 @@ router.post("/registro", async (req, res) => {
     const usuario = await nuevoUsuario.save();
     res.status(200).json(usuario);
   } catch (error) {
-    console.log(error);
+    res.status(200).json(error);
   }
 });
 
@@ -37,7 +37,8 @@ router.post("/iniciarsesion", async (req, res) => {
     !validaPasword && res.status(404).json("contraseña no encontrada");
     res.status(200).json(usuario);
   } catch (error) {
-    console.log(error);
+    res.status(200).json(error);
   }
 });
+
 module.exports = router;
