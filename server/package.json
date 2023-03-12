@@ -1,6 +1,6 @@
 {
   "name": "iulius",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "This is a clone of Facebook and Messenger",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,7 @@
   "author": "Bernardo de la Sierra Rabago",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "helmet": "^6.0.1",
