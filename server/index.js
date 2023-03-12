@@ -9,6 +9,7 @@ const morgan = require("morgan");
 //Rutas de programas internos
 const usuarioRuta = require("./routes/usuarios");
 const authRuta = require("./routes/auth");
+const postRuta = require("./routes/posts");
 
 // Rutas para configurar programas externos
 dotenv.config();
@@ -29,6 +30,7 @@ app.use(morgan("common"));
 
 app.use("/api/usuarios", usuarioRuta);
 app.use("/api/auth", authRuta);
+app.use("/api/posts", postRuta);
 
 // Aplicacion a la escucha
 app.listen(8800, () => {
