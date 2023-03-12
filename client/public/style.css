@@ -1,0 +1,5 @@
+/*Vale la pena acordarse que hay que resetear la pagina y abajo esta el reset*/
+* {
+  margin: 0;
+  font-family: "Roboto Mono", monospace;
+}
