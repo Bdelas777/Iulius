@@ -74,12 +74,15 @@
 .topbarBadge {
   width: 15px;
   height: 15px;
-  background-color: rgb(46, 36, 182);
+  background-color: rgba(83, 7, 1, 0.822);
   border-radius: 50%;
   color: white;
   position: absolute;
   top: -5px;
   right: -5px;
+  justify-content: center;
+  font-size: 12px;
+  align-items: center;
   justify-content: center;
   font-size: 12px;
 }
