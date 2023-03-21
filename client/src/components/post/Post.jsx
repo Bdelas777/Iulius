@@ -1,8 +1,9 @@
 import React from "react";
 import "./post.css";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import { Usuarios } from "../../data.js";
 
-export default function Post() {
+export default function Post({ post }) {
   return (
     <div className="post">
       <div className="postWrapper">
@@ -10,11 +11,13 @@ export default function Post() {
           <div className="postTopLeft">
             <img
               className="postProfileImg"
-              src="/assets/users/1.jpeg"
+              src={Usuarios.filter((u) => u.id === post.userId)[0].fotoPerfil}
               alt="Foto de perfil"
             />
-            <span className="postUsername">Bernardo de la S</span>
-            <span className="postDate">Hace 10 minutos</span>
+            <span className="postUsername">
+              {Usuarios.filter((u) => u.id === post.userId)[0].username}
+            </span>
+            <span className="postDate">{post.date}</span>
           </div>
           <div className="postTopRight">
             <MoreVertIcon />
@@ -22,10 +25,10 @@ export default function Post() {
         </div>
         <div className="postCenter">
           <span className="postText">
-            ¡Hola!, esta es la primera publicación en Iulius
+            {post?.desc}
             <img
               className="postImg"
-              src="/assets/posts/1.jpeg"
+              src={post.imagen}
               alt="Publicacion de usuario"
             />
           </span>
@@ -38,10 +41,12 @@ export default function Post() {
               src="/assets/encanta.png"
               alt="Me encanta"
             />
-            <span className="postLikeCounter">A 32 personas les gusta</span>
+            <span className="postLikeCounter">
+              A {post.like} personas les gusta
+            </span>
           </div>
           <div className="postBottomRight">
-            <span className="postCommentText">8 comentarios</span>
+            <span className="postCommentText">{post.comment} comentarios</span>
           </div>
         </div>
       </div>

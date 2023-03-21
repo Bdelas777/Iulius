@@ -25,7 +25,7 @@ export default function Share() {
           <div className="shareOptions">
             <div className="shareOption">
               <MovieIcon htmlColor="tomato" className="shareIcon" />
-              <span className="shareOptionText">Foto o Video</span>
+              <span className="shareOptionText">Media</span>
             </div>
             <div className="shareOption">
               <LabelIcon htmlColor="blue" className="shareIcon" />
@@ -36,7 +36,7 @@ export default function Share() {
               <span className="shareOptionText">Ubicación</span>
             </div>
             <div className="shareOption">
-              <EmojiEmotionsIcon htmlColor="yellow" className="shareIcon" />
+              <EmojiEmotionsIcon htmlColor="#faee57" className="shareIcon" />
               <span className="shareOptionText">Emoji</span>
             </div>
           </div>

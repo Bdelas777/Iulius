@@ -9,6 +9,8 @@ import QuestionMarkIcon from "@mui/icons-material/QuestionMark";
 import AssuredWorkloadIcon from "@mui/icons-material/AssuredWorkload";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import SchoolIcon from "@mui/icons-material/School";
+import { Usuarios } from "../../data.js";
+import CloseFriend from "../closeFriend/CloseFriend";
 
 export default function Sidebar() {
   return (
@@ -55,38 +57,9 @@ export default function Sidebar() {
         <button className="sidebarButton"> Ver más</button>
         <hr className="sidebarHr" />
         <ul className="sidebarFriendList">
-          <li className="sidebarFriend">
-            <img
-              className="sidebarFriendImg"
-              src="/assets/users/2.jpeg"
-              alt="Imagenes de amigos"
-            />
-            <span className="sidebarFriendName"> Chocas</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              className="sidebarFriendImg"
-              src="/assets/users/3.jpeg"
-              alt="Imagenes de amigos"
-            />
-            <span className="sidebarFriendName"> Chalky</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              className="sidebarFriendImg"
-              src="/assets/users/4.jpeg"
-              alt="Imagenes de amigos"
-            />
-            <span className="sidebarFriendName"> Luis</span>
-          </li>
-          <li className="sidebarFriend">
-            <img
-              className="sidebarFriendImg"
-              src="/assets/users/5.jpeg"
-              alt="Imagenes de amigos"
-            />
-            <span className="sidebarFriendName"> Mister G</span>
-          </li>
+          {Usuarios.map((u) => (
+            <CloseFriend key={u.id} usuario={u} />
+          ))}
         </ul>
       </div>
     </div>
