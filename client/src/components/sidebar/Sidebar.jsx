@@ -35,7 +35,7 @@ export default function Sidebar() {
           </li>
           <li className="sidebarListItem">
             <BookmarkIcon className="sidebarIcon" />
-            <span className="sidebarListItemText">Grupos</span>
+            <span className="sidebarListItemText">Guardado</span>
           </li>
           <li className="sidebarListItem">
             <QuestionMarkIcon className="sidebarIcon" />
@@ -51,7 +51,7 @@ export default function Sidebar() {
           </li>
           <li className="sidebarListItem">
             <SchoolIcon className="sidebarIcon" />
-            <span className="sidebarListItemText">Eventos</span>
+            <span className="sidebarListItemText">Educación</span>
           </li>
         </ul>
         <button className="sidebarButton"> Ver más</button>
