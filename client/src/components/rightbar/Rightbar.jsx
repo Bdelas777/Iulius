@@ -4,6 +4,8 @@ import { Usuarios } from "../../data.js";
 import Online from "../online/Online";
 
 export default function Rightbar({ profile }) {
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
   const HomeRightbar = () => {
     return (
       <>
@@ -51,7 +53,7 @@ export default function Rightbar({ profile }) {
         <div className="rightbarFollowings">
           <div className="rightbarFollowing">
             <img
-              src="assets/users/2.jpeg"
+              src={`${PF}users/2.jpeg`}
               alt="Amigos"
               className="rightbarFollowingImg"
             />
@@ -59,7 +61,7 @@ export default function Rightbar({ profile }) {
           </div>
           <div className="rightbarFollowing">
             <img
-              src="assets/users/3.jpeg"
+              src={`${PF}users/3.jpeg`}
               alt="Amigos"
               className="rightbarFollowingImg"
             />
@@ -67,7 +69,7 @@ export default function Rightbar({ profile }) {
           </div>
           <div className="rightbarFollowing">
             <img
-              src="assets/users/4.jpeg"
+              src={`${PF}users/4.jpeg`}
               alt="Amigos"
               className="rightbarFollowingImg"
             />
