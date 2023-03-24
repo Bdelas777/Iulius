@@ -20,9 +20,9 @@ export default function Feed() {
       <div className="feedWrappper">
         <Share />
         {/* Este es un ejemplo si pones datos */}
-        {/* {Posts.map((p) => (
+        {posts.map((p) => (
           <Post key={p.id} post={p} />
-        ))} */}
+        ))}
       </div>
     </div>
   );

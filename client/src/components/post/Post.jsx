@@ -1,12 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./post.css";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { Usuarios } from "../../data.js";
+import axios from "axios";
 
 export default function Post({ post }) {
-  const [like, setLike] = useState(post.like);
+  const [like, setLike] = useState(post.likes.length);
   const [isLiked, setIsLiked] = useState(false);
+  const [usuario, setUsuario] = useState({});
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
+  useEffect(() => {
+    const fetchUsuario = async () => {
+      const res = await axios.get(`/usuarios/${post.userId}`);
+      setUsuario(res.data);
+    };
+    fetchUsuario();
+  }, []);
 
   const likeHandler = () => {
     setLike(isLiked ? like - 1 : like + 1);
@@ -19,12 +28,10 @@ export default function Post({ post }) {
           <div className="postTopLeft">
             <img
               className="postProfileImg"
-              src={Usuarios.filter((u) => u.id === post.userId)[0].fotoPerfil}
+              src={usuario.fotoPerfil || PF + "users/noAvatar.png"}
               alt="Foto de perfil"
             />
-            <span className="postUsername">
-              {Usuarios.filter((u) => u.id === post.userId)[0].username}
-            </span>
+            <span className="postUsername">{usuario.username}</span>
             <span className="postDate">{post.date}</span>
           </div>
           <div className="postTopRight">
@@ -32,14 +39,8 @@ export default function Post({ post }) {
           </div>
         </div>
         <div className="postCenter">
-          <span className="postText">
-            {post?.desc}
-            <img
-              className="postImg"
-              src={PF + post.imagen}
-              alt="Publicacion de usuario"
-            />
-          </span>
+          <span className="postText">{post?.desc}</span>
+          <img className="postImg" src={PF + post.imagen} alt="" />
         </div>
         <div className="postBottom">
           <div className="postBottomLeft">
