@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./post.css";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import axios from "axios";
+import { format } from "timeago.js";
+import { Link } from "react-router-dom";
 
 export default function Post({ post }) {
   const [like, setLike] = useState(post.likes.length);
@@ -11,11 +13,11 @@ export default function Post({ post }) {
 
   useEffect(() => {
     const fetchUsuario = async () => {
-      const res = await axios.get(`/usuarios/${post.userId}`);
+      const res = await axios.get(`/usuarios?userId=${post.userId}`);
       setUsuario(res.data);
     };
     fetchUsuario();
-  }, []);
+  }, [post.userId]);
 
   const likeHandler = () => {
     setLike(isLiked ? like - 1 : like + 1);
@@ -26,13 +28,15 @@ export default function Post({ post }) {
       <div className="postWrapper">
         <div className="postTop">
           <div className="postTopLeft">
-            <img
-              className="postProfileImg"
-              src={usuario.fotoPerfil || PF + "users/noAvatar.png"}
-              alt="Foto de perfil"
-            />
+            <Link to={`profile/${usuario.username}`}>
+              <img
+                className="postProfileImg"
+                src={usuario.fotoPerfil || PF + "users/noAvatar.png"}
+                alt="Foto de perfil"
+              />
+            </Link>
             <span className="postUsername">{usuario.username}</span>
-            <span className="postDate">{post.date}</span>
+            <span className="postDate">{format(post.createdAt)}</span>
           </div>
           <div className="postTopRight">
             <MoreVertIcon />

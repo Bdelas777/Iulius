@@ -4,7 +4,7 @@
   "description": "This is a clone of Facebook and Messenger",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js "
   },
   "author": "Bernardo de la Sierra Rabago",
   "license": "ISC",
