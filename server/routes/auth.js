@@ -3,7 +3,7 @@ const Usuario = require("../models/Usuario");
 const bcrypt = require("bcrypt");
 
 // Registro
-router.post("/registro", async (req, res) => {
+router.post("/register", async (req, res) => {
   try {
     // Generacion de una nueva contraseña
     const salt = await bcrypt.genSalt(10);
@@ -26,7 +26,7 @@ router.post("/registro", async (req, res) => {
 
 // Iniciar sesion
 
-router.post("/iniciarsesion", async (req, res) => {
+router.post("/login", async (req, res) => {
   try {
     const usuario = await Usuario.findOne({ email: req.body.email });
     !usuario && res.status(404).json("usuario no encontrado");
