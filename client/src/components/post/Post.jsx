@@ -31,7 +31,11 @@ export default function Post({ post }) {
             <Link to={`profile/${usuario.username}`}>
               <img
                 className="postProfileImg"
-                src={usuario.fotoPerfil || PF + "users/noAvatar.png"}
+                src={
+                  usuario.fotoPerfil
+                    ? PF + usuario.fotoPerfil
+                    : PF + "users/noAvatar.png"
+                }
                 alt="Foto de perfil"
               />
             </Link>

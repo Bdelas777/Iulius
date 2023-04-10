@@ -2,6 +2,7 @@ import React, { useContext, useRef } from "react";
 import "./login.css";
 import { loginCall } from "../../apiCalls";
 import { AuthContext } from "../../context/AuthContext";
+import CircularProgress from "@mui/material/CircularProgress";
 
 export default function Login() {
   const email = useRef();
@@ -43,9 +44,21 @@ export default function Login() {
               required
               minLength="6"
             />
-            <button className="loginButton">Iniciar Sesión</button>
+            <button className="loginButton" type="submit" disabled={isFetching}>
+              {isFetching ? (
+                <CircularProgress color="secondary" size="20px" />
+              ) : (
+                "Iniciar Sesión"
+              )}
+            </button>
             <span className="loginForgot">¿Olvidaste tu contraseña?</span>
-            <button className="loginRegisterButton">Crea una cuenta</button>
+            <button className="loginRegisterButton">
+              {isFetching ? (
+                <CircularProgress color="secondary" size="20px" />
+              ) : (
+                "Crea una cuenta"
+              )}
+            </button>
           </form>
         </div>
       </div>

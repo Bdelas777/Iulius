@@ -1,4 +1,4 @@
-export const LoginStart = (usuarioCredenciales) => ({ type: "LOGIN_START" });
+export const LoginStart = (usuarioCredencial) => ({ type: "LOGIN_START" });
 
 export const LoginSuccess = (usuario) => ({
   type: "LOGIN_SUCCESS",
